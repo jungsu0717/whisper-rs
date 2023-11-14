@@ -9,7 +9,7 @@ use whisper_rs::{FullParams, SamplingStrategy, WhisperContext};
 /// Loads a context and model, processes an audio file, and prints the resulting transcript to stdout.
 fn main() -> Result<(), &'static str> {
     // Load a context and model.
-    let ctx = WhisperContext::new("example/path/to/model/whisper.cpp/models/ggml-base.en.bin")
+    let ctx = WhisperContext::new("./sys/whisper.cpp/models/ggml-small.bin")
         .expect("failed to load model");
     // Create a state
     let mut state = ctx.create_state().expect("failed to create key");
@@ -32,7 +32,7 @@ fn main() -> Result<(), &'static str> {
     params.set_print_timestamps(false);
 
     // Open the audio file.
-    let mut reader = hound::WavReader::open("audio.wav").expect("failed to open file");
+    let mut reader = hound::WavReader::open("./examples/full_usage/2830-3980-0043.wav").expect("failed to open file");
     #[allow(unused_variables)]
     let hound::WavSpec {
         channels,
