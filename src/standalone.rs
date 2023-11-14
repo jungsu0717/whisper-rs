@@ -57,9 +57,9 @@ pub fn get_lang_str(id: i32) -> Option<&'static str> {
 ///
 /// # C++ equivalent
 /// `void whisper_set_log_callback(whisper_log_callback callback);`
-pub unsafe fn set_log_callback(callback: whisper_rs_sys::whisper_log_callback) {
-    unsafe { whisper_rs_sys::whisper_set_log_callback(callback) }
-}
+// pub unsafe fn set_log_callback(callback: whisper_rs_sys::whisper_log_callback) {
+//     unsafe { whisper_rs_sys::whisper_set_log_callback(callback) }
+// }
 
 /// Print system information.
 ///
